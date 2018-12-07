@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宝石编辑器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#">ICREATORMC·宝石编辑工具</a>
+
+
+</nav>
+<div class="container-fluid">
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">源文件</div>
+            <div class="card-body">
+                <div class="form-group">
+
+                    <textarea class="form-control" rows="20" id="config"></textarea>
+
+                </div>
+                <button id="load" class="btn btn-primary">加载</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-header">工作区</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+
+
+                    <div class="col">
+
+                        <div class="form-group">
+                                <label>宝石代码</label>
+                                <input type="text" class="form-control" id="baoshi_id">
+                        </div>
+                        <div class="form-group">
+                            <label>物品ID</label>
+                            <input type="text" class="form-control" id="item_id">
+                        </div>
+                        <div class="form-group">
+                            <label>物品子ID</label>
+                            <input type="text" class="form-control" id="item_sub_id">
+                        </div>
+                        <div class="form-group">
+                            <label>宝石代码</label>
+                            <input type="text" class="form-control" id="baoshi_name">
+                        </div>
+                        <div class="form-group">
+                            <label>可镶嵌到的物品ID</label>
+                            <input type="text" class="form-control" id="allow_id">
+                        </div>
+                        <div class="form-group">
+                            <label>LORES</label>
+                            <textarea class="form-control" rows="5" id="baoshi_lores"></textarea>
+                        </div>
+                        <label>等级lores</label>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>等级</th>
+                                <th>lore</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><input type="text" class="form-control" id="add_lore_1"></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><input type="text" class="form-control" id="add_lore_2"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><input type="text" class="form-control" id="add_lore_3"></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><input type="text" class="form-control" id="add_lore_4"></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><input type="text" class="form-control" id="add_lore_5"></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><input type="text" class="form-control" id="add_lore_6"></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><input type="text" class="form-control" id="add_lore_7"></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td><input type="text" class="form-control" id="add_lore_8"></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td><input type="text" class="form-control" id="add_lore_9"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <label>成功率</label>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>等级</th>
+                                <th>几率</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><input type="text" class="form-control" id="sv_1"></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><input type="text" class="form-control" id="sv_2"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><input type="text" class="form-control" id="sv_3"></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><input type="text" class="form-control" id="sv_4"></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><input type="text" class="form-control" id="sv_5"></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><input type="text" class="form-control" id="sv_6"></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><input type="text" class="form-control" id="sv_7"></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td><input type="text" class="form-control" id="sv_8"></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td><input type="text" class="form-control" id="sv_9"></td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+
+                            <button id="save_item" class="btn btn-primary">保存</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/esprima/2.7.3/esprima.min.js"></script>
+<script src="https://cdn.bootcss.com/js-yaml/3.12.0/js-yaml.min.js"></script>
+<script>
+    $('#load').click(function () {
+
+        var data=jsyaml.load($('#config').val());
+        for(var i in data){//用javascript的for/in循环遍历对象的属性
+            console.log(i);
+        }
+        $('#baoshi_id').val(i);
+        //console.log(jsyaml.dump(data));
+        var editobj=data[i];
+        $('#item_id').val(editobj['ID']);
+        $('#item_sub_id').val(editobj['Data']);
+        $('#baoshi_name').val(editobj['Display']);
+        $('#allow_id').val(editobj['yunxu']);
+        for(var x=0;x<editobj['LORE'].length;x++) {
+            if (x == editobj['LORE'].length - 1) {
+
+                $('#baoshi_lores').val($('#baoshi_lores').val() + editobj['LORE'][x]);
+            } else {
+                $('#baoshi_lores').val($('#baoshi_lores').val() + editobj['LORE'][x] + "\n");
+            }
+        }
+        $('#add_lore_1').val(editobj['Lv']['Lv1']);
+        $('#add_lore_2').val(editobj['Lv']['Lv2']);
+        $('#add_lore_3').val(editobj['Lv']['Lv3']);
+        $('#add_lore_4').val(editobj['Lv']['Lv4']);
+        $('#add_lore_5').val(editobj['Lv']['Lv5']);
+        $('#add_lore_6').val(editobj['Lv']['Lv6']);
+        $('#add_lore_7').val(editobj['Lv']['Lv7']);
+        $('#add_lore_8').val(editobj['Lv']['Lv8']);
+        $('#add_lore_9').val(editobj['Lv']['Lv9']);
+
+        $('#sv_1').val(editobj['Sv']['Sv1']);
+        $('#sv_2').val(editobj['Sv']['Sv2']);
+        $('#sv_3').val(editobj['Sv']['Sv3']);
+        $('#sv_4').val(editobj['Sv']['Sv4']);
+        $('#sv_5').val(editobj['Sv']['Sv5']);
+        $('#sv_6').val(editobj['Sv']['Sv6']);
+        $('#sv_7').val(editobj['Sv']['Sv7']);
+        $('#sv_8').val(editobj['Sv']['Sv8']);
+        $('#sv_9').val(editobj['Sv']['Sv9']);
+
+    });
+    $('#save_item').click(function () {
+        var saveobj=new Object();
+        var item_name=$('#baoshi_id').val();
+        saveobj[item_name]=new Object();
+        saveobj[item_name]['ID']=$('#item_id').val();
+        saveobj[item_name]['Data']=$('#item_sub_id').val();
+        saveobj[item_name]['yunxu']=$('#allow_id').val();
+        saveobj[item_name]['LORE']= $('#baoshi_lores').val().split("\n");
+        saveobj[item_name]['Lv']=new Object();
+        saveobj[item_name]['Lv']['Lv1']=$('#add_lore_1').val();
+        saveobj[item_name]['Lv']['Lv2']=$('#add_lore_2').val();
+        saveobj[item_name]['Lv']['Lv3']=$('#add_lore_3').val();
+        saveobj[item_name]['Lv']['Lv4']=$('#add_lore_4').val();
+        saveobj[item_name]['Lv']['Lv5']=$('#add_lore_5').val();
+        saveobj[item_name]['Lv']['Lv6']=$('#add_lore_6').val();
+        saveobj[item_name]['Lv']['Lv7']=$('#add_lore_7').val();
+        saveobj[item_name]['Lv']['Lv8']=$('#add_lore_8').val();
+        saveobj[item_name]['Lv']['Lv9']=$('#add_lore_9').val();
+        saveobj[item_name]['Sv']=new Object();
+        saveobj[item_name]['Sv']['Sv1']=$('#sv_1').val();
+        saveobj[item_name]['Sv']['Sv2']=$('#sv_2').val();
+        saveobj[item_name]['Sv']['Sv3']=$('#sv_3').val();
+        saveobj[item_name]['Sv']['Sv4']=$('#sv_4').val();
+        saveobj[item_name]['Sv']['Sv5']=$('#sv_5').val();
+        saveobj[item_name]['Sv']['Sv6']=$('#sv_6').val();
+        saveobj[item_name]['Sv']['Sv7']=$('#sv_7').val();
+        saveobj[item_name]['Sv']['Sv8']=$('#sv_8').val();
+        saveobj[item_name]['Sv']['Sv9']=$('#sv_9').val();
+
+        $('#config').val(jsyaml.dump(saveobj));
+
+
+
+
+
+
+    })
+
+</script>
+</body>
+</html>
